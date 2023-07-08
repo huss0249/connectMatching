@@ -35,10 +35,17 @@ const getMatchingElements = (a, b, c) => {
     // log('qq = ', qq)
     // log('yy = ', yy)
     // log('zz = ', zz)
-    let tt = arrC.indexOf(main)
-    log('tt = ', tt)
+
+    // let tt = arrC.indexOf(main)
+    // log('tt = ', tt)
 
     arrC.forEach((w) => {
+
+      if (w.startsWith(trgt_filter)) {
+        log('Target ', w.substr(trgt_filter.length, 2))
+      }
+
+
       // log(w.split(trgt_filter)[1] != undefined)
       if (w === main) {
         log('open obj', w, elC)
