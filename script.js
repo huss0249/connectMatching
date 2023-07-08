@@ -39,10 +39,26 @@ const getMatchingElements = (a, b, c) => {
     // let tt = arrC.indexOf(main)
     // log('tt = ', tt)
 
+    let $target = ''
+    let $match = ''
     arrC.forEach((w) => {
 
       if (w.startsWith(trgt_filter)) {
-        log('Target ', w.substr(trgt_filter.length, 2))
+        // $target = parseInt(w.substr(trgt_filter.length, 2))
+        $target = w.substr(trgt_filter.length, 2)
+        
+        // log('Target ', w.substr(trgt_filter.length, 2))
+        log('Target ', $target)
+
+        if (arrC.includes(main)) {
+          let uuu = `${trgt_filter}${$target}`
+          log('uuu = ', uuu)
+          $match = $trgt_filter.filter((ee) => {
+            ee.classList.contains(ref)
+          })
+          log('$match =', $match)
+
+        }
       }
 
 
