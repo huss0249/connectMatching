@@ -43,7 +43,7 @@ const getMatchingElements = (a, b, c) => {
     let $match = ''
     arrC.forEach((w) => {
 
-      if (w.startsWith(trgt_filter)) {
+      if (w.startsWith(trgt_filter) && elC.classList.contains(ref)) {
         // $target = parseInt(w.substr(trgt_filter.length, 2))
         $target = w.substr(trgt_filter.length, 2)
         
@@ -61,8 +61,13 @@ const getMatchingElements = (a, b, c) => {
 
         // }
 
-        let result = $trgt_filter.find(t=>t.classList.contains(uuu) && t.classList.contains(ref));
-console.log(result);
+        let $src = $trgt_filter.find(t => t.classList.contains(uuu) && t.classList.contains(main));
+        log('src = ', $src)
+        
+        $match = $trgt_filter.find(t=>t.classList.contains(uuu) && t.classList.contains(ref));
+        console.log($match);
+
+        matchingElements.push({$src, $match});
       }
 
 
