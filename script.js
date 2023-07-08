@@ -11,7 +11,8 @@ const getClassElements = (flag) => {
 
 //-------------------------------------------------------------------
 
-const getMatchingElements = (a, b, c) => {
+// const getMatchingElements = (a, b, c) => {
+const getMatchingElements = (a, b, c, d) => {
   let matchingElements = [];
 
   let pair = {
@@ -51,7 +52,8 @@ const getMatchingElements = (a, b, c) => {
         log('Target ', $target)
 
         // if (arrC.includes(main)) {
-          let uuu = `${trgt_filter}${$target}`
+          // let uuu = `${trgt_filter}${$target}`
+          let uuu = `${d}${$target}`
           log('uuu = ', uuu)
 
         //   $match = $trgt_filter.map((ee) => {
@@ -61,10 +63,12 @@ const getMatchingElements = (a, b, c) => {
 
         // }
 
-        let $src = $trgt_filter.find(t => t.classList.contains(uuu) && t.classList.contains(main));
+        // let $src = $trgt_filter.find(t => t.classList.contains(uuu) && t.classList.contains(main));
+        let $src = a.find(t => t.classList.contains(uuu) && t.classList.contains(b));
         log('src = ', $src)
         
-        $match = $trgt_filter.find(t=>t.classList.contains(uuu) && t.classList.contains(ref));
+        // $match = $trgt_filter.find(t=>t.classList.contains(uuu) && t.classList.contains(ref));
+        $match = a.find(t=>t.classList.contains(uuu) && t.classList.contains(c));
         console.log($match);
 
         matchingElements.push({$src, $match});
@@ -72,12 +76,15 @@ const getMatchingElements = (a, b, c) => {
 
 
       // log(w.split(trgt_filter)[1] != undefined)
-      if (w === main) {
+      // if (w === main) {
+      if (w === b) {
         // log('open obj', w, elC)
       }
 
-      if (w.split(trgt_filter)[1] != undefined) {
-        let uu = parseInt(w.split(trgt_filter)[1])
+      // if (w.split(trgt_filter)[1] != undefined) {
+      if (w.split(d)[1] != undefined) {
+        // let uu = parseInt(w.split(trgt_filter)[1])
+        let uu = parseInt(w.split(d)[1])
         // log('save ix ', uu)
         // log(parseInt(w.split(trgt_filter)[1]))       
       }
@@ -136,4 +143,5 @@ let trgt_filter = "caption_";
 // const $b = getClassElements(ref);
 const $trgt_filter = getClassElements(trgt_filter);
 // log($trgt_filter)
-const matchingElements = getMatchingElements($trgt_filter, main, ref);
+// const matchingElements = getMatchingElements($trgt_filter, main, ref);
+const matchingElements = getMatchingElements($trgt_filter, main, ref, trgt_filter);
