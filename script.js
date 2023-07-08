@@ -1,9 +1,12 @@
+const log = console.log
 const getClassElements = (flag) => {
   let list = document.querySelectorAll('[class*="' + flag + '"]');
-  // console.log(Array.from(list));
-  let bbb = Array.from(list);
-  // return Array.from(list);
-  return bbb;
+  // log(list);
+  // log(Array.from(list));
+  // let bbb = Array.from(list);
+  return Array.from(list);
+  // return bbb;
+  // return list;
 };
 
 //-------------------------------------------------------------------
@@ -16,8 +19,9 @@ const getMatchingElements = (a, b, c) => {
     ref: null
   };
 
-  c.forEach((elC, i, c) => {
+  $trgt_filter.forEach((elC) => {
     let arrC = Array.from(elC.classList);
+    log(arrC)
 
     if (elC.classList.contains(main)) {
       if (!pair.main) {
@@ -25,36 +29,36 @@ const getMatchingElements = (a, b, c) => {
       }
     }
 
-    if (elC.classList.contains(ref)) {
-      if (!pair.ref && pair.main) {
-        pair.ref = elC.textContent;
-      }
-    }
+    // if (elC.classList.contains(ref)) {
+    //   if (!pair.ref && pair.main) {
+    //     pair.ref = elC.textContent;
+    //   }
+    // }
 
-    if (pair.main && pair.ref) {
-      console.log("before push ", pair);
-      let jj = { ...pair };
-      console.log("jj = ", jj);
+    // if (pair.main && pair.ref) {
+    //   console.log("before push ", pair);
+    //   let jj = { ...pair };
+    //   log("jj = ", jj);
 
-      // matchingElements.push(pair);
-      matchingElements.push(jj);
-    }
-    pair.main = null;
-    pair.ref = null;
+    //   // matchingElements.push(pair);
+    //   matchingElements.push(jj);
+    // }
+    // pair.main = null;
+    // pair.ref = null;
   });
 
-  console.log(matchingElements);
+  log(matchingElements);
   // return matchingElements;
   return ConnectMatching(matchingElements);
 };
 
 //-------------------------------------------------------------------
 const ConnectMatching = (arr) => {
-  console.log("pairs = ", arr);
+  log("pairs = ", arr);
   arr.forEach((el) => {
-    console.log(el.main, el.ref);
+    log(el.main, el.ref);
   });
-  // return console.log("done ", pairs);
+  // return log("done ", pairs);
   return;
 };
 //-------------------------------------------------------------------
@@ -64,8 +68,8 @@ let main = "has_caption";
 let ref = "caption";
 let trgt_filter = "caption_";
 
-const $a = getClassElements(main);
-const $b = getClassElements(ref);
-const $c = getClassElements(trgt_filter);
-
-const matchingElements = getMatchingElements($a, $b, $c);
+// const $a = getClassElements(main);
+// const $b = getClassElements(ref);
+const $trgt_filter = getClassElements(trgt_filter);
+// log($trgt_filter)
+const matchingElements = getMatchingElements($trgt_filter, main, ref);
