@@ -21,13 +21,40 @@ const getMatchingElements = (a, b, c) => {
 
   $trgt_filter.forEach((elC) => {
     let arrC = Array.from(elC.classList);
-    log(arrC)
+    // log(arrC)
 
-    if (elC.classList.contains(main)) {
-      if (!pair.main) {
-        pair.main = elC.textContent;
+    // let yy = elC.className.split(trgt_filter)[1]
+    // let zz = elC.className.split(trgt_filter)
+
+    // let qq = elC.className
+    // let yy = elC.className.split(trgt_filter)[1]
+    // let zz = elC.className.split(trgt_filter)
+    
+    // log(parseInt(yy))
+    // log('qq = ', qq)
+    // log('yy = ', yy)
+    // log('zz = ', zz)
+
+    
+    arrC.forEach((w) => {
+      // log(w.split(trgt_filter)[1] != undefined)
+      if (w === main) {
+        log('open obj', w, elC)
       }
-    }
+
+      if (w.split(trgt_filter)[1] != undefined) {
+        let uu = parseInt(w.split(trgt_filter)[1])
+        log('save ix ', uu)
+        // log(parseInt(w.split(trgt_filter)[1]))       
+      }
+      
+    
+    })
+    // if (elC.classList.contains(main)) {
+      // if (!pair.main) {
+      //   pair.main = elC.textContent;
+      // }
+    // }
 
     // if (elC.classList.contains(ref)) {
     //   if (!pair.ref && pair.main) {
