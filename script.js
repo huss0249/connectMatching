@@ -117,7 +117,9 @@ const getMatchingElements = (a, b, c) => {
 const ConnectMatching = (arr) => {
   log("pairs = ", arr);
   arr.forEach((el) => {
-    log(el.main, el.ref);
+    log(el.$src, el.$match);
+    log(el.$src.textContent = el.$match.textContent);
+    el.$match.remove()
   });
   // return log("done ", pairs);
   return;
