@@ -145,3 +145,8 @@ const $trgt_filter = getClassElements(trgt_filter);
 // log($trgt_filter)
 // const matchingElements = getMatchingElements($trgt_filter, main, ref);
 const matchingElements = getMatchingElements($trgt_filter, main, ref, trgt_filter);
+
+const $trgt_title = getClassElements('title_');
+// log($trgt_filter)
+// const matchingElements = getMatchingElements($trgt_filter, main, ref);
+const matchingTitles = getMatchingElements($trgt_title, 'has_title', 'title', 'title_');
