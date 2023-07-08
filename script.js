@@ -22,7 +22,7 @@ const getMatchingElements = (a, b, c) => {
   $trgt_filter.forEach((elC) => {
     let arrC = Array.from(elC.classList);
     log('')
-    log('arrC = ', arrC)
+    // log('arrC = ', arrC)
 
     // let yy = elC.className.split(trgt_filter)[1]
     // let zz = elC.className.split(trgt_filter)
@@ -50,26 +50,30 @@ const getMatchingElements = (a, b, c) => {
         // log('Target ', w.substr(trgt_filter.length, 2))
         log('Target ', $target)
 
-        if (arrC.includes(main)) {
+        // if (arrC.includes(main)) {
           let uuu = `${trgt_filter}${$target}`
           log('uuu = ', uuu)
-          $match = $trgt_filter.filter((ee) => {
-            ee.classList.contains(ref)
-          })
-          log('$match =', $match)
 
-        }
+        //   $match = $trgt_filter.map((ee) => {
+        //     ee.classList.contains(ref)
+        //   })
+        //   log('$match =', $match)
+
+        // }
+
+        let result = $trgt_filter.find(t=>t.classList.contains(uuu) && t.classList.contains(ref));
+console.log(result);
       }
 
 
       // log(w.split(trgt_filter)[1] != undefined)
       if (w === main) {
-        log('open obj', w, elC)
+        // log('open obj', w, elC)
       }
 
       if (w.split(trgt_filter)[1] != undefined) {
         let uu = parseInt(w.split(trgt_filter)[1])
-        log('save ix ', uu)
+        // log('save ix ', uu)
         // log(parseInt(w.split(trgt_filter)[1]))       
       }
       
