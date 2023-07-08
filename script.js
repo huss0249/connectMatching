@@ -118,7 +118,8 @@ const ConnectMatching = (arr) => {
   log("pairs = ", arr);
   arr.forEach((el) => {
     log(el.$src, el.$match);
-    log(el.$src.textContent = el.$match.textContent);
+    // log(el.$src.textContent = el.$match.textContent);
+    log(el.$src.innerHTML = el.$match.innerHTML);
     el.$match.remove()
   });
   // return log("done ", pairs);
