@@ -21,7 +21,8 @@ const getMatchingElements = (a, b, c) => {
 
   $trgt_filter.forEach((elC) => {
     let arrC = Array.from(elC.classList);
-    // log(arrC)
+    log('')
+    log('arrC = ', arrC)
 
     // let yy = elC.className.split(trgt_filter)[1]
     // let zz = elC.className.split(trgt_filter)
@@ -34,8 +35,9 @@ const getMatchingElements = (a, b, c) => {
     // log('qq = ', qq)
     // log('yy = ', yy)
     // log('zz = ', zz)
+    let tt = arrC.indexOf(main)
+    log('tt = ', tt)
 
-    
     arrC.forEach((w) => {
       // log(w.split(trgt_filter)[1] != undefined)
       if (w === main) {
